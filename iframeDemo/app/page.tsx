@@ -4,7 +4,7 @@ import Head from "next/head";
 import { useState, useEffect, useRef } from "react";
 
 const chatLinks = [
-  `${process.env.NEXT_PUBLIC_BASE_URL}/chat/embed/758beb11-7608-4654-a059-ef8863a05b0c`,
+  `${process.env.NEXT_PUBLIC_BASE_URL}/chat/embed/aeca2365-cb2e-4b18-9161-8b102591a347`,
 ];
 
 export default function IframePage() {
