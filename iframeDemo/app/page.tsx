@@ -3,18 +3,12 @@
 import Head from "next/head";
 import { useState, useEffect, useRef } from "react";
 
-const baseUrl = process.env.BASE_URL;
 const chatLinks = [
-  `${baseUrl}/chat/embed/6c781138-97a0-4541-b280-5377a0fac187`,
+  `${process.env.NEXT_PUBLIC_BASE_URL}/chat/embed/758beb11-7608-4654-a059-ef8863a05b0c`,
 ];
 
 export default function IframePage() {
   const [selectedChat, setSelectedChat] = useState(chatLinks[0]);
-  const [iframeSrc, setIframeSrc] = useState<string>("");
-
-  useEffect(() => {
-    setIframeSrc(selectedChat);
-  }, [selectedChat]);
 
   const iframeRef = useRef<HTMLIFrameElement>(null);
   useEffect(() => {
@@ -66,7 +60,7 @@ export default function IframePage() {
           </div>
           <div className="flex-1 h-[800px]">
             <iframe
-              src={iframeSrc}
+              src={selectedChat}
               className="w-full h-full border-0"
               allow="fullscreen"
               ref={iframeRef}

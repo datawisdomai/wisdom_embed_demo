@@ -3,12 +3,12 @@ import DescopeClient from "@descope/node-sdk";
 
 export async function GET() {
   const descopeClient = DescopeClient({
-    projectId: process.env.DESCOPE_PROJECT_ID!,
+    projectId: process.env.PROJECT_ID!,
   });
 
   try {
     const authInfo = await descopeClient.exchangeAccessKey(
-      process.env.DESCOPE_ACCESS_KEY!
+      process.env.ACCESS_KEY!
     );
     console.log(`Exchanged access key for JWT: ${authInfo.jwt}`);
 
